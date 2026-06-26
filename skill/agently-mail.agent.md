@@ -13,9 +13,9 @@ trigger: user's message involves sending, reading, replying, forwarding, searchi
 ## 前置条件
 
 用户必须已经配置好 hMailServer 连接信息：
-`ash
+```bash
 hmail-agent config --host <server> --account <email> --password <password>
-`
+```
 
 ## 可用命令
 
@@ -23,15 +23,15 @@ hmail-agent config --host <server> --account <email> --password <password>
 
 ### 账号信息
 
-`ash
+```bash
 hmail-agent +me
-`
+```
 
 返回当前连接的账号、服务器信息、可用邮箱文件夹。
 
 ### 列出邮件
 
-`ash
+```bash
 # 收件箱最新 20 封
 hmail-agent message +list
 
@@ -40,20 +40,20 @@ hmail-agent message +list --mailbox INBOX --limit 10 --offset 0
 
 # 仅未读
 hmail-agent message +list --unseen
-`
+```
 
 ### 读取邮件
 
-`ash
+```bash
 hmail-agent message +read <uid>
 hmail-agent message +read <uid> --mailbox INBOX
-`
+```
 
 返回邮件详情，包含正文、HTML、附件列表。
 
 ### 发送邮件
 
-`ash
+```bash
 hmail-agent message +send \
   --to recipient@example.com \
   --subject "Meeting Tomorrow" \
@@ -64,11 +64,11 @@ hmail-agent message +send --to user@example.com --subject "Hello" --html "<h1>He
 
 # 抄送、密送
 hmail-agent message +send --to a@example.com --cc b@example.com --subject "Hi" --text "Hello"
-`
+```
 
 ### 搜索邮件
 
-`ash
+```bash
 # 按发件人
 hmail-agent message +search --from friend@example.com
 
@@ -83,19 +83,19 @@ hmail-agent message +search --unseen
 
 # 全文搜索
 hmail-agent message +search --text "project report"
-`
+```
 
 ### 删除邮件
 
-`ash
+```bash
 hmail-agent message +delete <uid>[,<uid2>,<uid3>]
-`
+```
 
 ### 邮箱文件夹
 
-`ash
+```bash
 hmail-agent mailbox +list
-`
+```
 
 ## 常见使用场景
 
@@ -127,8 +127,8 @@ hmail-agent mailbox +list
 ## 配置检查
 
 如果命令返回配置错误，提示用户运行：
-`ash
+```bash
 hmail-agent config --show
-`
+```
 
 确认服务器地址、账号、密码已正确配置。

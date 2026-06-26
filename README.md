@@ -20,45 +20,45 @@
 
 ## 安装
 
-`ash
+```bash
 git clone <本仓库> && cd hmail-agent-mail
 npm install -g .
-`
+```
 
 或者全局安装：
 
-`ash
+```bash
 npm install -g @hmail/agent-mail
-`
+```
 
 ## 快速开始
 
 ### 第 1 步 — 配置服务器信息
 
-`ash
+```bash
 hmail-agent config \
   --host mail.yourdomain.com \
   --account you@yourdomain.com \
   --password your-password
-`
+```
 
 如果你的 hMailServer 使用非默认端口：
 
-`ash
+```bash
 hmail-agent config --host mail.yourdomain.com --port 143 --smtp-port 25 --ssl false --account you@yourdomain.com --password your-password
-`
+```
 
 ### 第 2 步 — 测试连接
 
-`ash
+```bash
 hmail-agent auth test
-`
+```
 
 ### 第 3 步 — 查看账号信息
 
-`ash
+```bash
 hmail-agent +me
-`
+```
 
 ## 命令参考
 
