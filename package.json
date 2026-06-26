@@ -1,0 +1,22 @@
+{
+  "name": "@hmail/agent-mail",
+  "version": "1.0.0",
+  "description": "Agent Mail CLI for hMailServer — 类似腾讯 Agent 邮箱，通过 IMAP/SMTP 接入你自己搭建的 hMailServer",
+  "main": "src/index.js",
+  "scripts": {
+    "postinstall": "node bin/hmail-agent.js init"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "commander": "^15.0.0",
+    "imapflow": "^1.4.3",
+    "mailparser": "^3.9.12",
+    "nodemailer": "^9.0.1"
+  },
+  "bin": {
+    "hmail-agent": "bin/hmail-agent.js"
+  }
+}
