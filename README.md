@@ -21,7 +21,7 @@
 ## 安装
 
 ```bash
-git clone <本仓库> && cd hmail-agent-mail
+git clone https://github.com/Gyancute/hmail-agent-mail.git && cd hmail-agent-mail
 npm install -g .
 ```
 
@@ -88,7 +88,34 @@ hmail-agent +me
 
 ## AI Agent 集成
 
-本仓库包含 skill/agently-mail.agent.md，可导入支持 Agent Skill 的系统（如 Codex、Cline 等），让 AI 助手原生支持邮件操作。
+本仓库包含 [skill/agently-mail.agent.md](skill/agently-mail.agent.md)，导入后 AI 助手（如 Codex、Cline、Claude Code 等）即可原生支持邮件操作——发送、读取、搜索、回复、删除邮件，所有数据存储在你自己的 hMailServer 上。
+
+### 一句话配置（复制发给你的 AI 助手）
+
+将下面这段话直接复制粘贴给你的 Codex、Claude Code 或 Cline，它会自动完成安装和配置：
+
+> 请在本地执行以下操作来配置 hMailServer 邮件工具：
+> 1. 安装："git clone https://github.com/Gyancute/hmail-agent-mail.git && cd hmail-agent-mail && npm install -g ."
+> 2. 配置连接："hmail-agent config --host <你的服务器地址> --account <你的邮箱> --password <你的密码>"
+> 3. 测试连接："hmail-agent auth test"
+> 完成后告诉我可以帮你做哪些邮件操作。
+
+### 配置后可以做什么
+
+装好之后，直接对你的 AI 助手说这些话即可：
+
+| 你想做的事 | 对 AI 说 |
+|-----------|---------|
+| 查看最新邮件 | "帮我查一下收件箱里最新的 5 封邮件" |
+| 发送邮件 | "给 zhangsan@example.com 发一封邮件，主题是'会议提醒'，内容是'明天下午 2 点开会'" |
+| 搜索邮件 | "搜索来自 lisi@example.com 关于'报价'的邮件" |
+| 搜索指定日期 | "找一下上个月来自 HR 的邮件" |
+| 整理收件箱 | "帮我把收件箱按发件人归类，列出未读邮件" |
+| 查看邮件详情 | "帮我读一下 UID 为 123 的那封邮件" |
+
+### Skill 文件说明
+
+如果你使用支持 Agent Skill 的系统（如 Codex Desktop、Cline），也可以将 skill/agently-mail.agent.md 导入到你的 AI 助手的技能目录中，这样该助手将自动拥有邮件处理能力，无需每次重复配置。
 
 ## 与 hMailServer 的配合
 
